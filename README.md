@@ -40,6 +40,6 @@ have a value of the [1]th index of the ascii map.
 
 ### External Libraries
 
-The only non-standard package used was [https://github.com/nfnt/resize].
+The only non-standard package used was [github.com/nfnt/resize](https://github.com/nfnt/resize).
 This was chosen because it provided an easy way to efficiently resize
 (using the Nearest-Neighbor algorithm).
