@@ -6,6 +6,9 @@ import (
 	"log"
 	"net/http"
 
+	_ "image/jpeg"
+	_ "image/png"
+
 	"github.com/baoist/img2ascii/img_processor"
 	units "github.com/docker/go-units"
 )
