@@ -9,7 +9,7 @@ import (
 	_ "image/jpeg"
 	_ "image/png"
 
-	"github.com/baoist/img2ascii/img_processor"
+	processor "github.com/baoist/img2ascii/image_processor"
 	units "github.com/docker/go-units"
 )
 
@@ -59,7 +59,7 @@ func processHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	ascii_image := img_processor.Convert(img)
+	ascii_image := processor.Convert(img)
 
 	json.NewEncoder(w).Encode(ascii_image)
 }
