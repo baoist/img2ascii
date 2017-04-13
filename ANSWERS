@@ -1,0 +1,13 @@
+1) How would you measure the performance of your service?
+
+I would start with isolated metrics on the code with benchmark testing build into Golang, particularly around `processor.scaleImage` (with varying image sizes), and `processor.convert`. When the application runs in a production-level environment, I would set up the project with NewRelic which should provide a lot of information around the requests, as well as the performance of the GC.
+
+2) What are some strategies you would employ to make your service more scalable?
+
+I would use a load balancer like AWS ELB, which should increase availability and request throughput.
+
+3) How would your design change if you needed to store the uploaded images?
+
+In `server.processHandler`, between retrieving the file from the form and reading the file, I would interface with a storage service like AWS s3.
+
+Additionally, I would offload any reading of the image to the processor itself. In doing this I would store either both of the source and scaled images on s3, or just the source, while using AWS lambda to resize the image.
