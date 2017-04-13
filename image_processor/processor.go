@@ -1,4 +1,4 @@
-package img_processor
+package processor
 
 import (
 	"bytes"
@@ -46,7 +46,7 @@ func scaleImage(img image.Image) image.Image {
 		h = MAX_HEIGHT
 	}
 
-	img = resize.Resize(uint(w), uint(h), img, resize.Lanczos3)
+	img = resize.Resize(uint(w), uint(h), img, resize.NearestNeighbor)
 
 	return img
 }
